@@ -20,7 +20,7 @@ if [ "$scan1" != "$scan2" ]; then
         echo Verificando inconsistências
         while IFS=$'\n' read linha; do
             if ! grep "$linha" <(echo "$scan1") &> /dev/null; then
-                scan1+="$linha$'\n"
+                scan1+="$linha$'\n'"
                 end=1
             fi
         done < <(echo "$scan2")
